@@ -25,6 +25,8 @@ if __name__ == "__main__":
         solution, list(filter(lambda m: not m.startswith("_"), dir(solution)))[0]
     )
     for _input, expected_output in TESTS.items():
+        if not isinstance(_input, (tuple, list)):
+            _input = (_input,)
         actual_output = method(*_input)
         if not isinstance(expected_output, list):
             expected_output = [expected_output]
