@@ -80,7 +80,7 @@ data = response.json()
 test_cases = data["data"]["question"]["exampleTestcaseList"]
 tests = []
 for test_case in test_cases:
-    params = "(" + ", ".join(test_case.split("\n")) + ")"
+    params = "(" + ", ".join(test_case.split("\n")) + ", )"
     tests.append(f'{{"in": {params}, "out": ...}},')
 tests_str = "\n    ".join(tests)
 
